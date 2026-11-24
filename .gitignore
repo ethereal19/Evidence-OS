@@ -1,0 +1,57 @@
+# Environment / Virtual Environment
+env/
+venv/
+.venv/
+ENV/
+.env
+.env.*
+*.env
+.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+
+# Local runtime data
+backend/uploads/
+backend/**/__pycache__/
+backend/Gemini_Engine/outputs/
+backend/analysis/graph_summary/summary_report.html
+backend/analysis/timeline_reconstruction/timeline_report.html
+backend/analysis/rule_validation/output/flags_report.html
+backend/preprocessor/audio/outputs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Frontend dependencies and build output
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+*tatva_local.db
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# Secret files
+*.pem
+*.key
+*.crt
+secrets.txt
+current_state.md
+backend_databases_overview.md

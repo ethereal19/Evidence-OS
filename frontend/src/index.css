@@ -1,0 +1,377 @@
+@import "tailwindcss";
+
+/* =====================================================
+   Evidence OS FORENSIC INTELLIGENCE SYSTEM — DESIGN SYSTEM
+   Primary Palette: Intelligence Blue (#2563eb / #2563eb)
+   Landing uses Gold (#a16207) for primary
+   ===================================================== */
+
+@theme {
+  /* ---- Color Tokens (Blue/Amber palette — screens 2,3,4) ---- */
+  --color-surface: #f8fafc;
+  --color-surface-dim: #f8fafc;
+  --color-surface-bright: #f1f5f9;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #ffffff;
+  --color-surface-container: #f1f5f9;
+  --color-surface-container-high: #e2e8f0;
+  --color-surface-container-highest: #e2e8f0;
+  --color-background: #f8fafc;
+  --color-on-surface: #1e293b;
+  --color-on-surface-variant: #475569;
+  --color-inverse-surface: #1e293b;
+  --color-inverse-on-surface: #313031;
+  --color-outline: #64748b;
+  --color-outline-variant: #cbd5e1;
+  --color-surface-tint: #2563eb;
+  --color-surface-variant: #e2e8f0;
+
+  /* Primary — Intelligence Blue */
+  --color-primary: #2563eb;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #2563eb;
+  --color-on-primary-container: #ffffff;
+  --color-primary-fixed: #cfe5ff;
+  --color-primary-fixed-dim: #2563eb;
+  --color-on-primary-fixed: #001d33;
+  --color-on-primary-fixed-variant: #004a77;
+  --color-inverse-primary: #00629d;
+
+  /* Secondary — Evidence Amber */
+  --color-secondary: #8a5700;
+  --color-on-secondary: #412d00;
+  --color-secondary-container: #a16207;
+  --color-on-secondary-container: #6b4b00;
+  --color-secondary-fixed: #ffdea8;
+  --color-secondary-fixed-dim: #ffba20;
+  --color-on-secondary-fixed: #271900;
+  --color-on-secondary-fixed-variant: #5e4200;
+
+  /* Tertiary — Anomaly Crimson */
+  --color-tertiary: #b42318;
+  --color-on-tertiary: #68000b;
+  --color-tertiary-container: #c2410c;
+  --color-on-tertiary-container: #6f000c;
+  --color-tertiary-fixed: #ffdad7;
+  --color-tertiary-fixed-dim: #b42318;
+  --color-on-tertiary-fixed: #410004;
+  --color-on-tertiary-fixed-variant: #930014;
+
+  /* Error */
+  --color-error: #b42318;
+  --color-on-error: #690005;
+  --color-error-container: #93000a;
+  --color-on-error-container: #ffdad6;
+
+  /* Gold — for Landing page hero */
+  --color-gold: #a16207;
+  --color-gold-dim: #a16207;
+  --color-gold-container: #ffd966;
+
+  /* ---- Typography ---- */
+  --font-geist: 'Geist', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* ---- Spacing ---- */
+  --spacing-unit: 4px;
+  --spacing-gutter: 16px;
+  --spacing-panel-padding: 24px;
+  --spacing-margin-desktop: 32px;
+  --spacing-margin-mobile: 16px;
+}
+
+/* =====================================================
+   CUSTOM BASE STYLES
+   ===================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+body {
+  font-family: 'Geist', sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* =====================================================
+   MATERIAL SYMBOLS
+   ===================================================== */
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+  user-select: none;
+}
+
+.icon-fill {
+  font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+}
+
+/* =====================================================
+   GLASS PANEL — Core Surface Component
+   Used across: Reconstruction, Investigation, Case File
+   ===================================================== */
+
+.glass-panel {
+  background: rgba(255,255,255,0.84);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(136, 145, 157, 0.2);
+}
+
+/* Blue-tinted glass for intelligence panels */
+.glass-panel-blue {
+  background: rgba(255,255,255,0.84);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(152, 203, 255, 0.1);
+}
+
+/* Intelligence glow effect */
+.intelligence-glow {
+  box-shadow: 0 0 15px rgba(0, 163, 255, 0.15);
+}
+
+/* Amber glow for case form */
+.amber-glow {
+  box-shadow: 0 0 15px rgba(254, 183, 0, 0.15);
+}
+
+/* =====================================================
+   TACTICAL PANEL — Hero Page Variant (Gold scheme)
+   ===================================================== */
+
+.tactical-panel {
+  background-color: rgba(255, 255, 255, 0.84);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 191, 0, 0.15);
+  box-shadow: inset 0 0 20px rgba(255, 191, 0, 0.02);
+  transition: all 0.3s ease;
+}
+
+.tactical-panel:hover {
+  border-color: rgba(255, 191, 0, 0.4);
+  box-shadow: inset 0 0 20px rgba(255, 191, 0, 0.05), 0 4px 20px rgba(15, 23, 42, 0.12);
+}
+
+/* =====================================================
+   MECHANICAL BUTTON — Hero Page Variant (Gold)
+   ===================================================== */
+
+.btn-mechanical {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.btn-mechanical::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  box-shadow: 0 0 15px rgba(255, 191, 0, 0);
+  transition: box-shadow 0.2s ease;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.btn-mechanical:hover::after {
+  box-shadow: 0 0 15px rgba(255, 191, 0, 0.4);
+}
+
+/* =====================================================
+   PIPELINE LINE — Hero Page Processing Section
+   ===================================================== */
+
+.pipeline-line {
+  height: 2px;
+  background: linear-gradient(to right, rgba(255, 191, 0, 0.2), rgba(255, 191, 0, 0.8), rgba(255, 191, 0, 0.2));
+  width: 40px;
+  margin: 0 16px;
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .pipeline-line {
+    width: 2px;
+    height: 30px;
+    background: linear-gradient(to bottom, rgba(255, 191, 0, 0.2), rgba(255, 191, 0, 0.8), rgba(255, 191, 0, 0.2));
+    margin: 8px 0;
+  }
+}
+
+/* =====================================================
+   SCANLINE EFFECT — Reconstruction & Investigation
+   ===================================================== */
+
+.scanline::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to bottom, transparent, rgba(0, 163, 255, 0.05), transparent);
+  animation: scanline 4s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+/* Scanline grid pattern for Investigation workspace */
+.scanline-grid {
+  background-image: linear-gradient(to bottom, transparent 50%, rgba(255, 219, 157, 0.05) 50%);
+  background-size: 100% 4px;
+}
+
+/* =====================================================
+   NODE PULSE — Animated graph nodes
+   ===================================================== */
+
+.node-pulse {
+  animation: node-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes node-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.1); }
+}
+
+/* =====================================================
+   GLOW BORDER — Focus effect for evidence forms
+   ===================================================== */
+
+.glow-border:focus-within {
+  border-color: #2563eb;
+  box-shadow: 0 0 10px rgba(152, 203, 255, 0.2);
+}
+
+/* =====================================================
+   CUSTOM SCROLLBARS
+   ===================================================== */
+
+.log-container::-webkit-scrollbar,
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.log-container::-webkit-scrollbar-track,
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.log-container::-webkit-scrollbar-thumb,
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(136, 145, 157, 0.3);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 2px;
+}
+
+/* =====================================================
+   TYPOGRAPHY UTILITIES
+   ===================================================== */
+
+.font-geist { font-family: 'Geist', sans-serif; }
+.font-mono-evidence { font-family: 'JetBrains Mono', monospace; }
+
+.text-headline-xl {
+  font-family: 'Geist', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: -0.02em;
+}
+
+.text-headline-lg {
+  font-family: 'Geist', sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: -0.01em;
+}
+
+.text-headline-md {
+  font-family: 'Geist', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+.text-body-lg {
+  font-family: 'Geist', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.text-body-md {
+  font-family: 'Geist', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.text-body-sm {
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.text-technical-md {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+}
+
+.text-technical-sm {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+/* =====================================================
+   SPIN ANIMATION — Reconstruction orbit rings
+   ===================================================== */
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Smooth hover scale for interactive elements */
+.scale-on-hover {
+  transition: transform 0.15s ease;
+}
+
+.scale-on-hover:hover {
+  transform: scale(1.05);
+}
+
+.scale-on-hover:active {
+  transform: scale(0.95);
+}
